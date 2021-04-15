@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org">
+    <head>
+        <meta http-equiv="contetnt-Type" content = "text/html"; charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+        <meta property="og:title" content="Sunwoo Commision" />
+        <meta property="og:description" content="Discord Page" />
+        <meta property="og:image" content ="" />
+        <meta property="og:url" content="https://chunwol.xyz/" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@_chunwol">
+
+        <title>Discord</title>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <link rel="stylesheet" href="/button.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    </head>
+    <body>
+        <form action="/request" method="post">
+            <div class="wrapper">
+                <div class="box">
+                    <h1 th:text="${status}"></h1>
+                </div>
+                <div class="box">
+                    <h3>Everyone</h3>
+                    <label class="switch">
+                        <input type="checkbox" name="everyone" value="@everyone" >
+                        <span class="slider round"></span>
+                    </label>
+                    <p>OFF</p><p style="display:none;">ON</p>
+                    <br/>
+                    <h3>내용 : </h3>
+                    <textarea rows="5" cols="50" name="content"></textarea>
+                </div>
+                <div class="box">
+                    <input type="submit" id="submit-btn" value="Send"/>
+                </div>
+            </div>
+        </form>
+        <!-- /.wrapper -->
+    </body>
+</html>
+
+<script>
+    let check = $("input[type='checkbox']");
+    check.click(function(){
+        $("p").toggle();
+    });
+</script>
